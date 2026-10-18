@@ -1,0 +1,19 @@
+[package]
+name = "cyi-native-symbol-bridge"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+libc = "=0.2.190"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.145"
+symbolic-common = "=13.9.0"
+symbolic-debuginfo = "=13.9.0"
+symbolic-demangle = "=13.9.0"
+symbolic-symcache = "=13.9.0"
+
+[profile.release]
+panic = "abort"
+strip = true
+lto = "thin"
